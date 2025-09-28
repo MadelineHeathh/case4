@@ -52,7 +52,7 @@ class SurveySubmission(BaseModel):
 class StoredSurveyRecord(BaseModel):
     name: str = Field(..., min_length=1, max_length=100)
     hashed_email: str = Field(..., description="SHA-256 hash of email")
-    age_hash: str = Field(..., description="SHA-256 hash of age")
+    hashed_age: str = Field(..., description="SHA-256 hash of age")
     consent: bool = Field(..., description="Must be true to accept")
     rating: int = Field(..., ge=1, le=5)
     comments: Optional[str] = Field(None, max_length=1000)
@@ -67,7 +67,7 @@ class StoredSurveyRecord(BaseModel):
         return cls(
             name=submission.name,
             hashed_email=hash_pii(submission.email),
-            age_hash=hash_pii(submission.age),
+            hashed_age=hash_pii(submission.age),
             consent=submission.consent,
             rating=submission.rating,
             comments=submission.comments,
