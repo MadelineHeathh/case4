@@ -1,0 +1,2 @@
+{"name": "Madeline Heath", "email": "bpr5yg@virginia.edu", "age": 19, "consent": true, "rating": 5, "comments": "hi", "received_at": "2025-09-24T20:40:13.705867+00:00", "ip": "172.25.148.140"}
+{"name": "John Doe", "email_hash": "836f82db99121b3481011f16b49dfa5fbc714a0d1b1b9f784a1ebbbf5b39577f", "age_hash": "b7a56873cd771f2c446d369b649430b65a756ba278ff97ec81bb6f55b2e73569", "consent": true, "rating": 4, "comments": "Great survey!", "user_agent": "Mozilla/5.0 (Test Browser)", "received_at": "2025-09-26T17:52:58.592800+00:00", "ip": "127.0.0.1"}
