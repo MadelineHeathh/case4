@@ -51,7 +51,7 @@ class SurveySubmission(BaseModel):
 #Good example of inheritance
 class StoredSurveyRecord(BaseModel):
     name: str = Field(..., min_length=1, max_length=100)
-    email_hash: str = Field(..., description="SHA-256 hash of email")
+    hashed_email: str = Field(..., description="SHA-256 hash of email")
     age_hash: str = Field(..., description="SHA-256 hash of age")
     consent: bool = Field(..., description="Must be true to accept")
     rating: int = Field(..., ge=1, le=5)
@@ -66,7 +66,7 @@ class StoredSurveyRecord(BaseModel):
         """Create a StoredSurveyRecord from a SurveySubmission, hashing PII fields."""
         return cls(
             name=submission.name,
-            email_hash=hash_pii(submission.email),
+            hashed_email=hash_pii(submission.email),
             age_hash=hash_pii(submission.age),
             consent=submission.consent,
             rating=submission.rating,
